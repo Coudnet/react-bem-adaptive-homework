@@ -11,16 +11,25 @@
   height: 100px;
 }
 
-.Footer-Nav a {
-  margin-bottom: 10px;
-  display: block;
+.Footer-Nav {
+  a {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  a:last-child {
+    margin-bottom: 0;
+  }
+
+  a, a:hover {
+    font-size: 12px;
+    font-weight: normal;
+    color: $main-grey-text-color;
+    text-decoration: none;
+  }
 }
 
-.Footer-Nav a:last-child {
-  margin-bottom: 0;
-}
-
-.Footer-Nav a, .Footer-Nav a:hover, .Footer-Copyright {
+.Footer-Copyright {
   font-size: 12px;
   font-weight: normal;
   color: $main-grey-text-color;
