@@ -1,0 +1,87 @@
+@import 'variables';
+
+.Header {
+  padding: 12px 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.Header-Logo {
+  height: 27px;
+  img {
+    margin-top: -5px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .Header {
+    position: fixed;
+    top: 0;
+  }
+
+  .Header-Nav {
+    position: absolute;
+    transform: scaleY(0);
+    top: 15px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 20px 20px;
+    transition: transform 0.2s linear, top 0.2s linear;
+
+    a {
+      margin-left: 15px;
+    }
+  }
+}
+
+.show-menu {
+  top: 48px;
+  transform: scaleY(1);
+}
+
+.Header a {
+  font-size: 16px;
+  color: $main-grey-text-color;
+  text-decoration: none;
+}
+.Header a.current {
+  color: $main-text-color;
+}
+.Header a:hover {
+  color: $main-text-color;
+  text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  .Header {
+    justify-content: flex-start;
+    padding: 32px 40px;
+    border-bottom: 1px solid #F0F0F0;
+  }
+
+  .Header-HamburgerIcon {
+    display: none;
+  }
+
+  .Header-Nav {
+    position: static;
+    transform: scaleY(1);
+    margin-left: 24px;
+    line-height: 24px;
+
+    a {
+      margin-left: 28px;
+      line-height: 20px;
+      vertical-align: sub;
+    }
+  }
+
+}

@@ -1,16 +1,21 @@
 import React from 'react';
 import './Header.scss';
+import logo from './logo.svg'
+import hamburgerIcon from './icon_list.svg'
+import { cn } from '@bem-react/classname';
 
-const Header = ({className}) => {
+const cnHeader = cn('Header');
+
+const Header = () => {
     return (
-        <header>
-            <div className="page-logo">
-                <img src="/public/images/icons/logo.svg" alt="Логотип Яндекс Дом"/>
+        <header className={cnHeader()}>
+            <div className={cnHeader('Logo')}>
+                <img src={logo} alt="Логотип Яндекс Дом"/>
             </div>
-            <div className="hamburger" id="hamburger">
-                <img src="/public/images/icons/icon_list.svg" alt="Открыть меню"/>
+            <div className={cnHeader('HamburgerIcon')}>
+                <img src={hamburgerIcon} alt="Открыть меню"/>
             </div>
-            <nav>
+            <nav className={cnHeader('Nav')}>
                 <a href="#" className="current">События</a>
                 <a href="#">Сводка</a>
                 <a href="#">Устройства</a>

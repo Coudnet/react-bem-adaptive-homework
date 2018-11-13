@@ -21,14 +21,11 @@ class Content extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.events.length}.</h2>
-            </div>
+            <main>
+
+            </main>
         );
     }
 }
-
-//const Content = new ContentClass();
 
 export default Content;

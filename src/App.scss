@@ -1,0 +1,7 @@
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+
+.App {
+  font-family: Arial, sans-serif;
+  font-size: $base-text-size;
+}
