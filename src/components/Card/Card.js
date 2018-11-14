@@ -17,20 +17,20 @@ const Card = (props) => {
 
             <div className={cnCard('Body')}>
                 <div className={cnCard('Head')}>
-                    <div className="card-head-maininfo">
-                        <div className="card-head-icon">
+                    <div className={cnCard('Info')}>
+                        <div className={cnCard('Icon')}>
                             <img src={require(`../../../public/images/icons/${props.data.icon}.svg`)}/>
                         </div>
-                        <div className="card-head-text">{props.data.title}</div>
+                        <div className={cnCard('Title')}>{props.data.title}</div>
                     </div>
-                    <div className="card-head-meta">
-                        <div className="card-head-meta-text">{props.data.source}</div>
-                        <div className="card-head-meta-time">{props.data.time}</div>
+                    <div className={cnCard('SubTitle')}>
+                        <div className={cnCard('Source')}>{props.data.source}</div>
+                        <div className={cnCard('Time')}>{props.data.time}</div>
                     </div>
                 </div>
 
                 <div className={cnCard('Content')}>
-                    <div className="card-content-text">{props.data.description}</div>
+                    <div className={cnCard('Text')}>{props.data.description}</div>
                     <CardControl source={props.data.source} data={props.data.data}/>
                 </div>
             </div>
