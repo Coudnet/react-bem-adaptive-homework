@@ -1,0 +1,231 @@
+@import "variables";
+
+.Card_size_s {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.Card_size_m {
+  grid-column: span 3;
+}
+.Card_size_l {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+@media (max-width: 750px) {
+  .Card_size_s {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+  .Card_size_m {
+    grid-column: span 3;
+  }
+  .Card_size_l {
+    grid-column: span 6;
+    grid-row: span 3;
+  }
+}
+
+@media (max-width: 567px) {
+  .Card_size_s {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  .Card_size_m {
+    grid-column: span 6;
+  }
+  .Card_size_l {
+    grid-column: span 6;
+    grid-row: span 3;
+  }
+}
+
+.Card {
+  background-color: $grey-color;
+  border-radius: 20px;
+  position: relative;
+}
+
+.Card_type_critical {
+  background-color: $red-color;
+}
+
+.Card-Body {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 128px 1fr;
+}
+
+.Card_size_s .Card-Body {
+  grid-template-rows: 160px 1fr;
+}
+
+.Card_size_s .Card-Head {
+  height: 158px;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-row-gap: 13px;
+}
+
+@media (max-width: 567px) {
+  .Card_size_s .Card-Body {
+    grid-template-rows: 1fr;
+  }
+
+  .Card_size_s .Card-Head {
+    height: auto;
+    display: block;
+  }
+
+
+}
+
+.Card-Head {
+  background: transparent;
+  padding: 20px 20px 0;
+  height: 109px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-head-maininfo {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px 1fr;
+
+  .card-head-icon {
+    width: 50px;
+    height: 50px;
+    @include flex-center;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.card-head-text {
+  margin-left: 18px;
+  max-height: 58px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+@media (max-width: 850px) {
+  .card-head-text {
+    font-size: 22px;
+  }
+}
+@media (max-width: 567px) {
+  .card-head-text {
+    font-size: 14px;
+  }
+}
+
+.Card_type_critical .Card-Head {
+  color: white;
+}
+
+.card-head-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 850px) {
+  .card-head-meta {
+    font-size: 16px;
+  }
+}
+@media (max-width: 567px) {
+  .card-head-meta {
+    font-size: 12px;
+  }
+}
+
+.Card_size_s .card-head-meta {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 567px) {
+  .Card_size_s .card-head-meta {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+}
+
+.Card-Content {
+  border-radius: 17px;
+  background-color: $grey-color;
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.Card_type_critical .Card-Content {
+  padding-top: 20px;
+}
+
+.card-content-text {
+  font-size: 20px;
+  color: #000000;
+}
+
+@media (max-width: 850px) {
+  .card-content-text {
+    font-size: 18px;
+  }
+}
+
+.Card-OpenIcon, .Card-CloseIcon {
+  position: absolute;
+  display: none;
+}
+
+.Card-OpenIcon {
+  background-image: url("/images/icons/next.svg");
+  width: 9px;
+  height: 16px;
+  bottom: 20px;
+  right: 30px;
+}
+
+.Card-CloseIcon {
+  background-image: url("/images/icons/cross.svg");
+  width: 14px;
+  height: 14px;
+  top: 20px;
+  right: 28px;
+}
+
+.card-critical .Card-CloseIcon {
+  background-image: url("/images/icons/cross-white.svg");
+}
+
+@media (min-width: 1024px) {
+  .Card:hover {
+    box-shadow: 0 0 20px 0 rgba(197,186,186,0.50);
+    background-color: #F3F3F3;
+  }
+
+  .Card_type_critical:hover {
+    background-color: #A33E31;
+  }
+
+  .Card:hover .Card-Content {
+    background-color: #F3F3F3;
+  }
+
+  .Card:hover .Card-OpenIcon, .Card:hover .Card-CloseIcon {
+    display: block;
+  }
+
+  .Card:hover .Card-OpenIcon:hover, .Card:hover .Card-CloseIcon:hover {
+    cursor: pointer;
+  }
+}

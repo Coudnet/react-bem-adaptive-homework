@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Image = ({className}) => {
+const Image = (props) => {
     return (
-        <div className={className}>
+        <div className="card-content-control-image">
+
         </div>
     );
 };
