@@ -1,0 +1,12 @@
+@import "variables";
+
+.card-content-control-image {
+  margin-top: 20px;
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}

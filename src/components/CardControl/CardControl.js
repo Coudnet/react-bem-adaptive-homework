@@ -3,6 +3,7 @@ import Temperature from "../Temperature/Temperature";
 import MediaPlayer from "../MediaPlayer/MediaPlayer";
 import Button from "../Button/Button";
 import Image from "../Image/Image";
+import Graph from "../Graph/Graph";
 
 const CardControl = (props) => {
     switch (props.source) {
@@ -15,7 +16,7 @@ const CardControl = (props) => {
         case 'Сенсор движения':
             return <div className="card-content-control"><Image data={props.data}/></div>;
         case 'Сенсоры потребления':
-            return <div className="card-content-control"><Image data={props.data}/></div>;
+            return <div className="card-content-control"><Graph data={props.data}/></div>;
         default:
             return <div className="card-content-control"></div>
     }
