@@ -1,35 +1,38 @@
 import React from 'react';
-import './MediaPlayer.scss'
+import './MediaPlayer.scss';
+import {cn} from '@bem-react/classname';
+
+const cnMediaPlayerControl = cn('MediaPlayerControl');
 
 const MediaPlayer = (props) => {
     return (
-        <div className="card-content-control-player">
-            <div className="track-info">
-                <div className="track-info-icon"><img src={props.data.albumcover} alt=""/></div>
-                <div className="track-info-content">
-                    <div className="track-info-content-artist">
-                        <div className="track-artist-name">{props.data.artist}</div>
-                        <span className="track-info-content-artist-separator">-</span>
-                        <div className="track-name">{props.data.track.name}</div>
+        <div className={cnMediaPlayerControl()}>
+            <div className={cnMediaPlayerControl('MediaDescription')}>
+                <div className={cnMediaPlayerControl('Icon')}><img src={props.data.albumcover} alt="Обложка альбома"/></div>
+                <div className={cnMediaPlayerControl('Description')}>
+                    <div className={cnMediaPlayerControl('ArtistInfo')}>
+                        <div className={cnMediaPlayerControl('ArtistName')}>{props.data.artist}</div>
+                        <span className={cnMediaPlayerControl('TrackHelperSeparator')}>-</span>
+                        <div className={cnMediaPlayerControl('TrackName')}>{props.data.track.name}</div>
                     </div>
-                    <div className="track-progress">
-                        <div className="track-progress-line">
-                            <div className="track-progress-slider"></div>
+                    <div className={cnMediaPlayerControl('TrackProgress')}>
+                        <div className={cnMediaPlayerControl('TrackProgressLine')}>
+                            <div className={cnMediaPlayerControl('TrackProgressSlider')}></div>
                         </div>
-                        <div className="track-length">{props.data.track.length}</div>
+                        <div className={cnMediaPlayerControl('TrackLength')}>{props.data.track.length}</div>
                     </div>
                 </div>
             </div>
-            <div className="player-control">
-                <div className="player-control-remotes">
-                    <div className="remote-left"></div>
-                    <div className="remote-right"></div>
+            <div className={cnMediaPlayerControl('TrackControls')}>
+                <div className={cnMediaPlayerControl('RemoteButtons')}>
+                    <div className={cnMediaPlayerControl('RemoteButtonsLeft')}></div>
+                    <div className={cnMediaPlayerControl('RemoteButtonsRight')}></div>
                 </div>
-                <div className="player-control-volume">
-                    <div className="volume-line">
-                        <div className="volume-slider"></div>
+                <div className={cnMediaPlayerControl('VolumeControl')}>
+                    <div className={cnMediaPlayerControl('VolumeControlLine')}>
+                        <div className={cnMediaPlayerControl('VolumeControlSlider')}></div>
                     </div>
-                    <div className="volume-value">{props.data.volume}%</div>
+                    <div className={cnMediaPlayerControl('VolumeValue')}>{props.data.volume}%</div>
                 </div>
             </div>
         </div>

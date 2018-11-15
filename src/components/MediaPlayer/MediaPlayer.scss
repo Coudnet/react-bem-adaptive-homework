@@ -1,13 +1,13 @@
-.card-content-control-player {
+.MediaPlayerControl {
   margin-top: 20px;
 }
 
-.track-info {
+.MediaPlayerControl-MediaDescription {
   display: grid;
   grid-template-columns: 53px 1fr;
 }
 
-.track-info-icon {
+.MediaPlayerControl-Icon {
   max-width: 53px;
   max-height: 53px;
   border-radius: 7px;
@@ -18,17 +18,17 @@
   }
 }
 
-.track-info-content {
+.MediaPlayerControl-Description {
   margin-left: 16px;
 }
 
-.track-info-content-artist {
+.MediaPlayerControl-ArtistInfo {
   font-size: 20px;
   display: flex;
 }
 
 @media (max-width: 850px) {
-  .track-info-content-artist {
+  .MediaPlayerControl-ArtistInfo {
     font-size: 18px;
     display: block;
     overflow: hidden;
@@ -37,39 +37,33 @@
   }
 }
 
-.track-info-content-artist-separator {
+.MediaPlayerControl-TrackHelperSeparator {
   margin: 0 5px;
 }
 
 @media (max-width: 900px) {
-  .track-info-content-artist {
+  .MediaPlayerControl-ArtistInfo {
     flex-direction: column;
   }
-  .track-info-content-artist-separator {
+  .MediaPlayerControl-TrackHelperSeparator {
     display: none;
   }
 }
 
-.track-progress {
+.MediaPlayerControl-TrackProgress {
   display: grid;
   grid-template-columns: 1fr 40px;
   align-items: center;
 }
 
-.track-progress-line {
+.MediaPlayerControl-TrackProgressLine {
   position: relative;
   height: 2px;
   background-color: #979797;
   width: 100%;
 }
 
-.track-length {
-  font-size: 14px;
-  color: rgba(161, 161, 161, 0.84);
-  justify-self: end;
-}
-
-.track-progress-slider {
+.MediaPlayerControl-TrackProgressSlider {
   height: 20px;
   width: 12px;
   background: #D8D8D8;
@@ -79,35 +73,41 @@
   left: 80%;
 }
 
-.player-control {
+.MediaPlayerControl-TrackLength {
+  font-size: 14px;
+  color: rgba(161, 161, 161, 0.84);
+  justify-self: end;
+}
+
+.MediaPlayerControl-TrackControls {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 135px 1fr;
   grid-column-gap: 6px;
 }
 
-.player-control-remotes {
+.MediaPlayerControl-RemoteButtons {
   display: flex;
   justify-content: space-between;
 }
 
-.remote-left, .remote-right {
+.MediaPlayerControl-RemoteButtonsLeft, .MediaPlayerControl-RemoteButtonsRight {
   width: 53px;
   height: 53px;
   background-image: url("/images/Prev.svg");
 }
 
-.remote-right {
+.MediaPlayerControl-RemoteButtonsRight {
   transform: rotate(180deg);
 }
 
-.player-control-volume {
+.MediaPlayerControl-VolumeControl {
   display: grid;
   grid-template-columns: 1fr 40px;
   align-items: center;
 }
 
-.volume-line {
+.MediaPlayerControl-VolumeControlLine {
   width: 100%;
   height: 3px;
   background: rgba(216,216,216,0.30);
@@ -115,7 +115,7 @@
   position: relative;
 }
 
-.volume-slider {
+.MediaPlayerControl-VolumeControlSlider {
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -124,7 +124,7 @@
   top: -7px;
 }
 
-.volume-value {
+.MediaPlayerControl-VolumeValue {
   font-size: 14px;
   color: rgba(161, 161, 161, 0.84);
   justify-self: end;
