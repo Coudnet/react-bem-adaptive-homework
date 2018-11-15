@@ -1,7 +1,7 @@
 import React from 'react';
 import Temperature from "../Temperature/Temperature";
 import MediaPlayer from "../MediaPlayer/MediaPlayer";
-import Button from "../Button/Button";
+import Button from "../YellowButton/Button";
 import Image from "../Image/Image";
 import Graph from "../Graph/Graph";
 import {cn} from '@bem-react/classname';
@@ -15,7 +15,7 @@ const CardControl = (props) => {
         case 'Яндекс.Станция':
             return <div className={cnControl()}><MediaPlayer data={props.data}/></div>;
         case 'Холодильник':
-            return <div className={cnControl()}><Button buttonContent={props.data.buttons[0]} yellow={true}/><Button buttonContent={props.data.buttons[1]}/></div>;
+            return <div className={cnControl()}><Button buttonContent={props.data.buttons[0]} yellow={true}/><Button buttonContent={props.data.buttons[1]} yellow={false}/></div>
         case 'Сенсор движения':
             return <div className={cnControl()}><Image data={props.data}/></div>;
         case 'Сенсоры потребления':
