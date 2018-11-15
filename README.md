@@ -3,6 +3,18 @@
 
 В директории проекта:
 
-### `npm start`
+`npm start`
 
 Откройте [http://localhost:3000](http://localhost:3000)
+
+Для работы проекта необходим NodeJS сервер, который будет отдавать 
+json с событиями для рендера
+
+## Настройка окружения
+Для установки сервера можно воспользоваться командой
+
+`npm i node-js-shri2018`
+
+или
+
+`git clone https://github.com/Coudnet/nodejs-shri2018.git`
