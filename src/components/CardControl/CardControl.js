@@ -15,7 +15,7 @@ const CardControl = (props) => {
         case 'Яндекс.Станция':
             return <div className={cnControl()}><MediaPlayer data={props.data}/></div>;
         case 'Холодильник':
-            return <div className={cnControl()}><Button data={props.data}/></div>;
+            return <div className={cnControl()}><Button buttonContent={props.data.buttons[0]} yellow={true}/><Button buttonContent={props.data.buttons[1]}/></div>;
         case 'Сенсор движения':
             return <div className={cnControl()}><Image data={props.data}/></div>;
         case 'Сенсоры потребления':

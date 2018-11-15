@@ -2,15 +2,12 @@ import React from 'react';
 import './Button.scss'
 import {cn} from '@bem-react/classname';
 
-
+const cnButton = cn('Button');
 
 const Button = (props) => {
     return (
-        <div className="card-content-control-buttons">
-            <button className="button-first">{props.data.buttons[0]}</button>
-            <button className="button-second">{props.data.buttons[1]}</button>
-        </div>
-    );
+        <button className={cnButton({yellow: props.yellow})}>{props.buttonContent}</button>
+    )
 };
 
 export default Button;
